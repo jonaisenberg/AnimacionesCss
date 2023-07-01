@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.conatiner {
+    display: grid;
+    grid-template-areas: 
+    "navbar"
+    "galery"
+    "contacts";
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    background-color: yellowgreen;
+    grid-area: navbar;
+}
+
+.image {
+    width: 60px;
+    margin: 15px;
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    50% {
+        transform: translateX(200px) rotate(360deg);
+    }
+}
+
+.fa-solid {
+    margin: 20px;
+}
+
+.list {
+    display: none;
+}
+
+.gallery {
+    grid-area: gallery;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+.image-bike {
+    width: 300px;
+    border-radius: 5%;
+    filter: grayscale(100%);
+    transition: 0.3s ease;
+}
+
+.image-bike:hover {
+    filter: grayscale(0%)
+}
+
+.contacts {
+    grid-area: contacts;
+    background-color: yellowgreen;
+    padding: 20px;
+    gap: 20px;
+    display: grid;
+}
+
+.rights {
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.icons-rrss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.links {
+    color: black;
+}
+
+.facebook-icon {
+    font-size: 30px;
+}
+
+.facebook-icon:hover {
+    color: #3c5b9b;
+}
+
+.instagram-icon {
+    font-size: 30px;
+}
+
+.instagram-icon:hover {
+    color: #de0442;
+}
+
+.twitter-icon {
+    font-size: 30px;
+}
+
+.twitter-icon:hover {
+    color: #1b9bf3 ;
+}
+
+.twitch-icon  {
+    font-size: 30px;
+}
+
+.twitch-icon:hover {
+    color: #643b8b;
+}
+
+.name {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        display: grid;
+        grid-template-areas: 
+        "navbar gallery gallery gallery"
+        "navbar contacts contacts contacts"
+        ;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    @keyframes move {
+        50% {
+            transform: translateY(480px) rotate(720deg);
+        }
+    }
+
+    .navbar{
+        align-items: start;
+        justify-content: left;
+    }
+
+    .list {
+        margin-top: 20px;
+        font-family: 'Roboto Mono', monospace;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .list > a:hover {
+        color: white;
+    }
+
+    .gallery {
+        margin: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .icons-rrss {
+        display: flex;
+        text-align: center;
+    }
+
+    .name {
+        font-family: 'Josefin Sans', sans-serif;;
+        display: flex;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+}
